@@ -1,0 +1,199 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(113deg, #9F5CAB -4.14%, #AB5CAA 51.95%, #AB5C92 108.04%);
+}
+header{
+    display: flex;
+    padding: 5%;
+    border-bottom: 5px solid #804177;
+    background: #A75CAB;
+    justify-content: space-between;
+    position: fixed;
+    min-height: 32px;
+    max-height: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    user-select: none;
+}
+nav{
+    margin-top: 220px;
+    flex: 1;
+    height: calc(100vh - 220px); 
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.icon{
+    background-color: white;
+    border-radius: 32px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    margin-right: 12px;
+}
+.botoes-add-trash{
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+button{
+    display: flex;
+    gap: 16px;
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-items: center;
+    border-radius: 16px;
+    width: 139px;
+    height: 58px;
+    background-color: #626CFF;
+    border: 2px solid #9665FF;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+button:hover{
+    cursor: pointer;
+    background-color: #535cda;
+    border: 2px solid #8356e3;
+}
+button img{
+    margin-left: 6px;
+}
+.lixo-b{
+    background-color: #FF6264;
+    border: 2px solid #FF657A;
+}
+.lixo-b:hover{
+    cursor: pointer;
+    background-color: #d84c4e;
+    border: 2px solid #c94557;
+}
+.lixo-b img{
+    background-color: #FF9799;
+    padding: 5%;
+    border-radius: 10px;
+}
+.contatos-h2{
+    margin-left: 2%;
+    display: flex;
+    border-radius: 34px;
+    margin-top: 1%;
+    background: #CE55BD;
+    box-shadow: 0 4px 13.4px -3px #FF84EE inset, 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    width: 226px;
+    height: 56px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    user-select: none;
+}
+.add{
+    margin: 2% 20% 10% 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    border: 2px dotted #D9D9D9;
+    border-radius: 149px;
+    color: #D9D9D9;
+    user-select: none;
+    cursor: pointer;
+}
+.add img{
+    width: 150px;
+    height: 150px;
+}
+.status-ball{
+    -webkit-box-shadow:0px 0px 21px 15px rgba(155,255,132,0.9);
+    -moz-box-shadow: 0px 0px 21px 15px rgba(155,255,132,0.9);
+    box-shadow: 0px 0px 21px 15px rgba(155,255,132,0.9);
+    background-color: #9BFF84;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.status{
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+.status p{
+    color: #9BFF84;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    margin-right: 25px;
+}
+.contatos{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin: 2%;
+    min-height: 62px;
+    height: auto;
+    border-radius: 30px;
+    background: #CE55BD;
+    box-shadow: 0 8px 18.9px -6px #E582D7 inset, 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    user-select: none;
+}
+
+.contatos:hover{
+    background-color: #a83f9a;
+}
+
+.cliente{
+    display: flex;
+    align-items: center;
+}
+.dados{
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.profile-pic{
+    display: flex;
+    background-color: #D1E0FF;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #583131;
+    font-size: 18px;
+    font-weight: 510;
+    margin-right: 20px;
+}
+
+main{
+    background: linear-gradient(113deg, #9F5CAB -4.14%, #AB5CAA 51.95%, #AB5C92 108.04%);
+}
+
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(113deg, #9F5CAB -4.14%, #AB5CAA 51.95%, #AB5C92 108.04%);
+    z-index: -1;
+}
