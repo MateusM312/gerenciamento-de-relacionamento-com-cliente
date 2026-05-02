@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(113deg, #9F5CAB -4.14%, #AB5CAA 51.95%, #AB5C92 108.04%);
+}
+
+header{
+    display: flex;
+    padding: 5%;
+    border-bottom: 5px solid #804177;
+    background: #A75CAB;
+    justify-content: space-between;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.icon{
+    background-color: white;
+    border-radius: 32px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    margin-right: 12px;
+}
+
+.botoes-add-trash{
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+
+button{
+    display: flex;
+    gap: 16px;
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-items: center;
+    border-radius: 16px;
+    width: 139px;
+    height: 58px;
+    background-color: #626CFF;
+    border: 2px solid #9665FF;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+button img{
+    margin-left: 6px;
+}
+
+.lixo-b{
+    background-color: #FF6264;
+    border: 2px solid #FF657A;
+}
+
+.lixo-b img{
+    background-color: #FF9799;
+    padding: 5%;
+    border-radius: 10px;
+}
