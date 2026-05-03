@@ -3,10 +3,13 @@ let elements = [];
 
 function openForms() {
     const getForm = document.getElementById('form');
-    if (getForm.style.display === 'flex') {
-        getForm.style.display = 'none';
-    } else {
-        getForm.style.display = 'flex';
+    const aberto = getForm.style.display === 'flex';
+    getForm.style.display = aberto ? 'none' : 'flex';
+
+    if (!aberto) {
+        // resetar ao abrir
+        assigned = -1;
+        elements.forEach(el => el.querySelector('img').src = './imgs/Rectangle 13.png');
     }
 }
 
