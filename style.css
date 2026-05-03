@@ -44,6 +44,8 @@ nav{
     gap: 26px;
     align-items: center;
 }
+
+
 button{
     display: flex;
     gap: 16px;
@@ -128,6 +130,27 @@ button img{
     height: 30px;
     border-radius: 50%;
 }
+
+.status-ball-ausente{
+    -webkit-box-shadow:0px 0px 21px 15px rgba(249, 255, 132, 0.9);
+    -moz-box-shadow: 0px 0px 21px 15px rgba(249, 255, 132, 0.9);
+    box-shadow: 0px 0px 21px 15px rgba(249, 255, 132, 0.9);
+    background-color: rgba(249, 255, 132, 0.9);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.status-ball-inativo{
+    -webkit-box-shadow:0px 0px 21px 15px rgba(255, 132, 132, 0.9);
+    -moz-box-shadow: 0px 0px 21px 15px rgba(255, 132, 132, 0.9);
+    box-shadow: 0px 0px 21px 15px rgba(255, 132, 132, 0.9);
+    background-color: rgba(255, 132, 132, 0.9);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 .status{
     display: flex;
     margin-left: auto;
@@ -146,24 +169,31 @@ button img{
     margin: 2%;
     min-height: 62px;
     height: auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cliente:hover{
+    background-color: #a83f9a;
+}
+
+.cliente{
+    padding: 2%;
+    margin: 2%;
+    min-height: 62px;
+    height: auto;
     border-radius: 30px;
     background: #CE55BD;
     box-shadow: 0 8px 18.9px -6px #E582D7 inset, 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     cursor: pointer;
     user-select: none;
-}
-
-.contatos:hover{
-    background-color: #a83f9a;
-}
-
-.cliente{
     display: flex;
     align-items: center;
 }
 .dados{
     margin: 0;
     padding: 0;
+    margin-left: 6px;
     color: #FFF;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
@@ -171,11 +201,15 @@ button img{
     font-weight: 400;
     line-height: normal;
 }
+
 .profile-pic{
     display: flex;
     background-color: #D1E0FF;
     width: 60px;
     height: 60px;
+    min-width: 60px;   /* adiciona isso */
+    min-height: 60px;  /* adiciona isso */
+    flex-shrink: 0;    /* adiciona isso */
     align-items: center;
     justify-content: center;
     border-radius: 50%;
@@ -196,4 +230,146 @@ body::after {
     inset: 0;
     background: linear-gradient(113deg, #9F5CAB -4.14%, #AB5CAA 51.95%, #AB5C92 108.04%);
     z-index: -1;
+}
+
+.criar-cliente{
+    display: none;
+    /* display: flex; */
+    position: fixed;
+    z-index: 101;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.62);
+    align-items: center;
+    justify-content: center;
+}
+
+.forms{
+    width: 554px;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 29px;
+    background: linear-gradient(206deg, #A75CAB 0.27%, #E582D7 65.78%, #CE55BD 99.73%);
+}
+
+.btnschecks{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-text{
+    display: flex;
+    user-select: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    margin: 2%;
+    border-radius: 22px;
+    background: #E582D7;
+    box-shadow: 0 4px 4px 0 #F799E9 inset, 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.input-text img{
+    margin-right: 6px;
+}
+
+.inpt-text{
+    color: #D9D9D9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    border: none;
+    padding: 3%;
+    margin: 4%;
+    outline: none;
+    border-radius: 32px;
+    background: #E582D7;
+    box-shadow: 0 3px 7.8px -2px #FF9FF1 inset, 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.botoes-aceitar-fechar{
+    display: flex;
+    margin-top: 80px;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.btn-aceitar{
+    justify-content: center;
+    text-align: center;
+    background-color: #62FF84;
+    border: #65FF6A 2px solid;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-aceitar:hover{
+    background-color: #3aa752;
+    border: #1ba420 2px solid;
+}
+
+.btn-voltar{
+    justify-content: center;
+    background-color: #FF6262;
+    border: 2px solid #FF7565;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+.btn-voltar:hover{
+    background-color: #a93636;
+    border: 2px solid #a74034;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.excluir{
+    background-color: rgb(255, 0, 0);
+    padding: 12px;
+    border-radius: 12px;
+    margin-left: auto;
+    animation-name: color-change-trash-contrario;
+    animation-duration: 1s;
+}
+
+@keyframes color-change-trash {
+    from {padding: 12px; background-color: rgb(255, 0, 0);}
+    to {padding: 18px; background-color: rgb(168, 0, 0);}
+}
+@keyframes color-change-trash-contrario {
+    to {padding: 12px; background-color: rgb(255, 0, 0);}
+    from {padding: 18px; background-color: rgb(168, 0, 0);}
+}
+
+.excluir {
+    background-color: rgb(220, 38, 38);
+    padding: 12px;
+    border-radius: 12px;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    
+    /* Tudo acontece aqui — transição suave em todas as propriedades */
+    transition: 
+        background-color 0.25s ease,
+        padding 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.excluir:hover {
+    background-color: rgb(153, 27, 27);
+    padding: 16px;
+    border-radius: 12px;
+    margin-left: auto;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+    transform: scale(1.05);
+}
+
+.excluir:active {
+    background-color: rgb(127, 20, 20);
+    transform: scale(0.97);
+    box-shadow: none;
+    transition-duration: 0.1s;
 }

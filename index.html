@@ -8,40 +8,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="criar-cliente" id="form">
+        <div class="forms">
+            <input class="inpt-text" type="text" placeholder="Adicionar contato..." id="contatoAdd">
+            <input class="inpt-text" type="text" placeholder="Adicionar empresa..." id="empresaAdd">
+            <input class="inpt-text" type="text" placeholder="Adicionar departamento..." id="departamentoAdd">
+            <input class="inpt-text" type="text" placeholder="Informações adicionais..." id="informacoesAdd">
+            <div class="btnschecks">
+                <h2>STATUS</h2>
+                <div class="input-text rec-check"><img src="./imgs/Rectangle 13.png" alt=""><span>Ativo</span></div>
+                <div class="input-text rec-check"><img src="./imgs/Rectangle 13.png" alt=""><span>Ausente</span></div>
+                <div class="input-text rec-check"><img src="./imgs/Rectangle 13.png" alt=""><span>Inativo</span></div>
+            </div>
+            <div class="botoes-aceitar-fechar">
+                <button class="btn-aceitar" onclick="criarCliente()">Aceitar</button>
+                <button class="btn-voltar" onclick="openForms()">Voltar</button>
+            </div>
+        </div>
+    </div>
     <header>
         <div class="titulo">
             <div class="icon">
-                <img src="../imgs/Book.svg" alt="">
+                <img src="./imgs/Book.svg" alt="">
             </div>
             <h1>Gerenciamento de relações com clientes</h1>
         </div>
-
         <div class="botoes-add-trash">
-            <button class="novo-botao-contaot"><img src="./imgs/NovoIcon.svg" alt="icone-adds.svg">Novo</button>
-            <button class="lixo-b"><img src="./imgs/Trash.svg" alt="lixoIcon.svg">Lixo</button>
+            <button onclick="openForms()" class="novo-botao-contaot">
+                <img src="./imgs/NovoIcon.svg" alt="icone-add" style="pointer-events: none;">Novo
+            </button>
+            <button class="lixo-b">
+                <img src="./imgs/Trash.svg" alt="lixoIcon" style="pointer-events: none;">Lixo
+            </button>
         </div>
     </header>
     <nav>
         <div class="contatos-h2">
             <h2>CONTATOS</h2>
         </div>
-        <div class="contatos">
-            <div class="cliente">
+        <div class="contatos" id="contatos">
+            <div class="cliente" id="cliente">
                 <div class="profile-pic"><p>MW</p></div>
-                <p class="dados">Mark Watney - </p>
-                <span class="dados">NASA - </span>
+                <p class="dados">Mark Watney</p>
+                <span class="dados">-</span>
+                <span class="dados">NASA</span>
+                <span class="dados">-</span>
                 <span class="dados">Departamento de botânica</span>
                 <div class="status">
                     <p>STATUS</p>
                     <div class="status-ball"></div>
                 </div>
+                <div class="excluir" onclick="deletar(this)">
+                    <img src="./imgs/Trash.svg" alt="excluir-card-png" style="pointer-events: none;">
+                </div>
             </div>
         </div>
-        <div class="add">
+        <div class="add" onclick="openForms()">
             <img src="./imgs/add_circle.svg" alt="">
             <h2>ADICIONAR NOVO CONTATO</h2>
         </div>
     </nav>
 </body>
-<script src="../scripts/script.js"></script>
+<script src="./script.js"></script>
 </html>
