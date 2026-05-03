@@ -47,22 +47,23 @@
             <h2>CONTATOS</h2>
         </div>
         <div class="contatos" id="contatos">
-            <div class="cliente" id="cliente">
-                <div class="profile-pic"><p>MW</p></div>
-                <p class="dados">Mark Watney</p>
-                <span class="dados">-</span>
-                <span class="dados">NASA</span>
-                <span class="dados">-</span>
-                <span class="dados">Departamento de botânica</span>
-                <div class="status">
-                    <p>STATUS</p>
-                    <div class="status-ball"></div>
-                </div>
-                <div class="excluir" onclick="deletar(this)">
-                    <img src="./imgs/Trash.svg" alt="excluir-card-png" style="pointer-events: none;">
-                </div>
-            </div>
-        </div>
+<div class="cliente" id="cliente">
+    <div class="profile-pic"><p>MW</p></div>
+    <div class="dados-grupo">
+        <span class="dado-item">Mark Watney</span>
+        <span class="sep">—</span>
+        <span class="dado-item">NASA</span>
+        <span class="sep">—</span>
+        <span class="dado-item">Departamento de botânica</span>
+    </div>
+    <div class="status">
+        <span class="status-label">STATUS</span>
+        <div class="status-ball"></div>
+    </div>
+    <div class="excluir" onclick="deletar(this)">
+        <img src="./imgs/Trash.svg" alt="excluir-card-png" style="pointer-events: none;">
+    </div>
+</div>        </div>
         <div class="add" onclick="openForms()">
             <img src="./imgs/add_circle.svg" alt="">
             <h2>ADICIONAR NOVO CONTATO</h2>

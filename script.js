@@ -63,15 +63,15 @@ function renderizarCliente(c) {
     cliente.className = 'cliente';
     cliente.innerHTML = `
         <div class="profile-pic" style="background-color: ${c.corPerfil};"><p>${iniciais}</p></div>
-        <p class="dados">${c.nome}</p>
-        <span class="dados">-</span>
-        <span class="dados">${c.empresa}</span>
-        <span class="dados">-</span>
-        <span class="dados">${c.departamento}</span>
-        <span class="dados">-</span>
-        <span class="dados">${c.adicional}</span>
+        <div class="dados-grupo">
+            <span class="dado-item">${c.nome}</span>
+            <span class="sep">—</span>
+            <span class="dado-item">${c.empresa}</span>
+            <span class="sep">—</span>
+            <span class="dado-item">${c.departamento}</span>
+        </div>
         <div class="status">
-            <p>STATUS</p>
+            <span class="status-label">STATUS</span>
             <div class="${c.statusClass}"></div>
         </div>
         <div class="excluir" onclick="deletar(this)">
@@ -83,7 +83,7 @@ function renderizarCliente(c) {
 
 function deletar(botao) {
     const cliente = botao.closest('.cliente');
-    const nome = cliente.querySelector('.dados').textContent;
+    const nome = cliente.querySelector('.dado-item').textContent; // era .dados, agora é .dado-item
     clienteStorage = clienteStorage.filter(c => c.nome !== nome);
     salvarClientes();
     cliente.remove();
