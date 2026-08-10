@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></head>
 <body>
     <div class="criar-cliente" id="form">
@@ -28,6 +29,17 @@
             </div>
         </div>
     </div>
+    <div class="criar-lixo" id="lixo">
+        <div class="forms">
+            <div class="titulo-lixo">
+                <h3>Lixeira</h3>
+                <img src="./imgs/x-square.svg" alt="fechar" onclick="fecharLixeira()">
+            </div>
+            <div class="list-of-people-trash" id="listaLixeira">
+                <!-- itens renderizados via JS (renderizarLixeira) -->
+            </div>
+        </div>
+    </div>
     <header>
         <div class="titulo">
             <div class="icon">
@@ -39,7 +51,7 @@
             <button onclick="openForms()" class="novo-botao-contaot">
                 <img src="./imgs/NovoIcon.svg" alt="icone-add" style="pointer-events: none;">Novo
             </button>
-            <button class="lixo-b">
+            <button onclick="abrirLixeira()" class="lixo-b">
                 <img src="./imgs/Trash.svg" alt="lixoIcon" style="pointer-events: none;">Lixo
             </button>
         </div>
@@ -49,23 +61,8 @@
             <h2>CONTATOS</h2>
         </div>
         <div class="contatos" id="contatos">
-<div class="cliente" id="cliente">
-    <div class="profile-pic"><p>MW</p></div>
-    <div class="dados-grupo">
-        <span class="dado-item">Mark Watney</span>
-        <span class="sep">—</span>
-        <span class="dado-item">NASA</span>
-        <span class="sep">—</span>
-        <span class="dado-item">Departamento de botânica</span>
-    </div>
-    <div class="status">
-        <span class="status-label">STATUS</span>
-        <div class="status-ball"></div>
-    </div>
-    <div class="excluir" onclick="deletar(this)">
-        <img src="./imgs/Trash.svg" alt="excluir-card-png" style="pointer-events: none;">
-    </div>
-</div>        </div>
+            <!-- contatos renderizados via JS (renderizarCliente) -->
+        </div>
         <div class="add" onclick="openForms()">
             <img src="./imgs/add_circle.svg" alt="">
             <h2>ADICIONAR NOVO CONTATO</h2>
