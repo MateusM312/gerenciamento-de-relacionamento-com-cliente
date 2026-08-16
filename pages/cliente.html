@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente — Gerenciamento de relações com clientes</title>
+    <link rel="shortcut icon" href="../imgs/Book.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/infostyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Sora:wght@400..800&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="titulo">
+            <a href="../index.html" class="btn-voltar-header" title="Voltar">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="profile-pic-header" id="profilePicHeader"></div>
+            <div class="cliente-header-textos">
+                <h1 class="cliente-nome-header" id="clienteNomeHeader">Carregando...</h1>
+                <span class="cliente-empresa-header" id="clienteEmpresaHeader"></span>
+            </div>
+        </div>
+        <div class="status-header" id="statusPillHeader" title="Clique para alterar o status">
+            <span class="status-label">STATUS</span>
+            <div class="status-ball" id="statusBall"></div>
+        </div>
+    </header>
+
+    <main class="container-cliente" id="containerCliente">
+
+        <section class="coluna-esquerda">
+
+            <div class="card-info">
+                <h2 class="secao-titulo">INFORMAÇÕES</h2>
+                <div class="info-linha">
+                    <span class="info-label">Departamento</span>
+                    <span class="info-valor" id="infoDepartamento">—</span>
+                </div>
+                <div class="info-linha-obs">
+                    <span class="info-label">Observações rápidas</span>
+                    <textarea class="inpt-text-area" id="infoAdicional" placeholder="Anote algo sobre o cliente..."></textarea>
+                </div>
+            </div>
+
+            <div class="card-calendario">
+                <div class="calendario-header">
+                    <button class="btn-mes" onclick="mudarMes(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <h2 id="mesAnoLabel">—</h2>
+                    <button class="btn-mes" onclick="mudarMes(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="calendario-dias-semana">
+                    <span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span>
+                </div>
+                <div class="calendario-grid" id="calendarioGrid"></div>
+                <div class="legenda-calendario">
+                    <span class="dot-legenda"></span> dia com reunião marcada
+                </div>
+            </div>
+
+        </section>
+
+        <section class="coluna-direita">
+            <div class="card-notas">
+                <div class="notas-toolbar">
+                    <button type="button" onclick="formatarTexto('bold')" title="Negrito"><i class="fa-solid fa-bold"></i></button>
+                    <button type="button" onclick="formatarTexto('italic')" title="Itálico"><i class="fa-solid fa-italic"></i></button>
+                    <button type="button" onclick="formatarTexto('underline')" title="Sublinhado"><i class="fa-solid fa-underline"></i></button>
+                    <span class="toolbar-sep"></span>
+                    <button type="button" onclick="formatarTexto('formatBlock', 'H3')" title="Título"><i class="fa-solid fa-heading"></i></button>
+                    <button type="button" onclick="formatarTexto('insertUnorderedList')" title="Lista"><i class="fa-solid fa-list-ul"></i></button>
+                    <button type="button" onclick="inserirChecklist()" title="Checklist"><i class="fa-solid fa-square-check"></i></button>
+                    <span class="status-salvo" id="statusSalvo">Salvo</span>
+                </div>
+                <div class="editor-notas" id="editorNotas" contenteditable="true" data-placeholder="Escreva anotações sobre esse cliente aqui..."></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== MODAL DE REUNIÃO ===================== -->
+    <div class="criar-cliente" id="modalReuniao">
+        <div class="forms forms-reuniao">
+            <div class="titulo-lixo">
+                <h3>Reunião — <span id="modalReuniaoData">—</span></h3>
+                <img src="../imgs/x-square.svg" alt="fechar" onclick="fecharModalReuniao()">
+            </div>
+            <div class="corpo-modal-reuniao">
+                <input class="inpt-text" type="text" placeholder="Título da reunião..." id="reuniaoTitulo">
+                <input class="inpt-text" type="time" id="reuniaoHorario">
+                <textarea class="inpt-text-area" placeholder="Observações..." id="reuniaoObs"></textarea>
+                <div class="botoes-aceitar-fechar">
+                    <button class="btn-deletar-perm" id="btnRemoverReuniao" onclick="removerReuniao()" style="display:none;">
+                        <i class="fa-solid fa-trash"></i> Remover
+                    </button>
+                    <button class="btn-voltar" onclick="fecharModalReuniao()">Cancelar</button>
+                    <button class="btn-aceitar" onclick="salvarReuniao()">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../scripts/infoscript.js"></script>
+</html>

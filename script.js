@@ -71,6 +71,10 @@ function criarCliente() {
     elements.forEach(el => el.querySelector('img').src = './imgs/Rectangle 13.png');
 }
 
+function abrirCliente(id) {
+    window.location.href = `pages/cliente.html?id=${id}`;
+}
+
 function renderizarCliente(c) {
     const iniciais = c.nome.slice(0, 2).toUpperCase();
     const cliente = document.createElement('div');
@@ -89,10 +93,12 @@ function renderizarCliente(c) {
             <span class="status-label">STATUS</span>
             <div class="${c.statusClass}"></div>
         </div>
-        <div class="excluir" onclick="deletar(this)">
+        <div class="excluir" onclick="event.stopPropagation(); deletar(this)">
             <img src="./imgs/Trash.svg" alt="excluir-card-png" style="pointer-events: none;">
         </div>
     `;
+    // clicar em qualquer parte do card (exceto o botão excluir) abre a página do cliente
+    cliente.addEventListener('click', () => abrirCliente(c.id));
     document.getElementById('contatos').appendChild(cliente);
 }
 
